@@ -15,7 +15,7 @@ shuffle_nb = 43
 sample_r = 16000
 scale = 0.5
 size_of_batch = 128
-number_of_epochs = 2
+number_of_epochs = 20
 
 
 #Procesiranje zvuka(buke)
