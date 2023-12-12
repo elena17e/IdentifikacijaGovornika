@@ -51,14 +51,7 @@ def training(sample_rate, class_names, train_variable, number_of_epochs, test_va
     plt.plot(histr.history['loss'], 'r')
     plt.plot(histr.history['val_loss'], 'b')
     plt.show()
-    plt.title('Precision')
-    plt.plot(histr.history['precision'], 'r')
-    plt.plot(histr.history['val_precision'], 'b')
-    plt.show()
-    plt.title('Recall')
-    plt.plot(histr.history['recall'], 'r')
-    plt.plot(histr.history['val_recall'], 'b')
-    plt.show()
+
 
     return histr
 
