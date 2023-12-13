@@ -130,15 +130,15 @@ train_audio_paths = path_to_audi_files_array[:-number_of_testing_samples]
 train_labels = array_of_lables[:-number_of_testing_samples]
 
 
-valid_audio_paths = path_to_audi_files_array[-number_of_testing_samples:]
-valid_labels = array_of_lables[-number_of_testing_samples:]
+testing_audio_paths = path_to_audi_files_array[-number_of_testing_samples:]
+testing_lables = array_of_lables[-number_of_testing_samples:]
 
 train_variable = paths_and_labels_to_files(train_audio_paths, train_labels)
 train_variable = train_variable.shuffle(buffer_size=size_of_batch * 8, seed=shuffle_nb).batch(
     size_of_batch
 )
 
-test_variable = paths_and_labels_to_files(valid_audio_paths, valid_labels)
+test_variable = paths_and_labels_to_files(testing_audio_paths, testing_lables)
 test_variable = test_variable.shuffle(buffer_size=32 * 8, seed=shuffle_nb).batch(32)
 
 train_variable = train_variable.map(
@@ -175,7 +175,7 @@ print(histr.evaluate(train_variable))
 #primjena
 speakers_number = 13
 
-test_variable = paths_and_labels_to_files(valid_audio_paths, valid_labels)
+test_variable = paths_and_labels_to_files(testing_audio_paths, testing_lables)
 test_variable = test_variable.shuffle(buffer_size=size_of_batch * 8, seed=shuffle_nb).batch(
     size_of_batch
 )
