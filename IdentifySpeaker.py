@@ -10,7 +10,7 @@ main_directory = "./16000_pcm_speeches"
 speaker_audio = "./16000_pcm_speeches/speakers"
 noise_files = "./16000_pcm_speeches/noise"
 
-split_value = 0.1
+test_split = 0.1
 shuffle_nb = 43
 sample_r = 16000
 scale = 0.5
@@ -125,7 +125,7 @@ rng.shuffle(array_of_lables)
 
 
 # Razdvajanje na treniranje i testiranje
-number_of_valid_samples = int(split_value * len(path_to_audi_files_array))
+number_of_valid_samples = int(test_split * len(path_to_audi_files_array))
 train_audio_paths = path_to_audi_files_array[:-number_of_valid_samples]
 train_labels = array_of_lables[:-number_of_valid_samples]
 
