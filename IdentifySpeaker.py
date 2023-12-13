@@ -125,13 +125,13 @@ rng.shuffle(array_of_lables)
 
 
 # Razdvajanje na treniranje i testiranje
-number_of_valid_samples = int(test_split * len(path_to_audi_files_array))
-train_audio_paths = path_to_audi_files_array[:-number_of_valid_samples]
-train_labels = array_of_lables[:-number_of_valid_samples]
+number_of_testing_samples = int(test_split * len(path_to_audi_files_array))
+train_audio_paths = path_to_audi_files_array[:-number_of_testing_samples]
+train_labels = array_of_lables[:-number_of_testing_samples]
 
 
-valid_audio_paths = path_to_audi_files_array[-number_of_valid_samples:]
-valid_labels = array_of_lables[-number_of_valid_samples:]
+valid_audio_paths = path_to_audi_files_array[-number_of_testing_samples:]
+valid_labels = array_of_lables[-number_of_testing_samples:]
 
 train_variable = paths_and_labels_to_files(train_audio_paths, train_labels)
 train_variable = train_variable.shuffle(buffer_size=size_of_batch * 8, seed=shuffle_nb).batch(
